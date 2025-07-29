@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TOY STORE</title>
+  <link rel="stylesheet" href="cart.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+     <title> 🎉TOY STORE</title>
+</head>
+<body>
+
+<!-- ✅ رسالة الشراء -->
+<div id="checkout-message" style="
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #d4edda;
+  color: #111312;
+  padding: 12px 24px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-size: 18px;
+  z-index: 9999;
+  font-family: Arial, sans-serif;
+">
+  ✅ تم الشراء بنجاح!
+</div>
+
+<div class="nav">
+  <div class="logo"><img src="logo (1).png" width="140px"></div>
+       <button id="toggleTheme" type="button">☀️</button>
+  <div class="link">
+    <div class="cart-icon" onclick="goToCart()">
+      <i class="fa-solid fa-cart-shopping" style="color: transparent; -webkit-text-stroke: 1px white; font-size: 23px;"></i>
+      <span id="cart-count">0</span>
+    </div>
+    <a href="home.html">Home</a>
+    <a href="clothes.html">Clothes</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</div>
+
+<div class="d">
+  <p class="n">عربة التسوق</p>
+  <div class="cart-wrapper">
+    <div id="cart-items" class="cart"></div>
+    <div class="summary-box" id="summaryBox">
+      <h3>ملخص الطلب</h3>
+      <hr>
+      <p class="a">:المجموع الفرعي<span id="subtotal">0.00</span></p>
+      <p class="b">الشحن: <strong>مجاني</strong></p>
+      <hr class="a">
+      <p class="c"><strong>:الاجمالي<span id="total">0.00</span></strong></p><br>
+      <div class="t">
+        <a href="#" onclick="checkout()">اتمام الشراء</a>
+      </div>
+      <div class="l">
+        <a class="f" href="clothes.html">او استمر في الشراء</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <a href="#">home</a>
+  <a href="#">clothes</a>
+  <a href="#">about</a>
+  <a href="#">contact</a>
+  <div class="logo"><img src="logo (1).png" width="100px"></div> 
+  <hr><br>
+  <p>All Rights Reserved .2025©</p>
+</footer>
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  updateCartCount();
+});
+
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartCountElem = document.getElementById("cart-count");
+  if (cartCountElem) {
+    cartCountElem.textContent = cart.length;
+  }
+}
+
+function goToCart() {
+  window.location.href = "cart.html";
+}
+
+function addToCart(name, image, price) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const numericPrice = parseFloat(price.replace("$", ""));
+  cart.push({ name, image, price: numericPrice });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+}
+
+function updateSummary(cart) {
+  const subtotalElem = document.getElementById("subtotal");
+  const totalElem = document.getElementById("total");
+  let subtotal = 0;
+  cart.forEach((product) => {
+    const price = parseFloat(product.price);
+    subtotal += isNaN(price) ? 0 : price;
+  });
+  if (subtotalElem) subtotalElem.textContent = `$${subtotal.toFixed(2)}`;
+  if (totalElem) totalElem.textContent = `$${subtotal.toFixed(2)}`;
+}
+
+function removeItem(index) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  loadCart();
+}
+
+function loadCart() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartItemsContainer = document.getElementById("cart-items");
+  cartItemsContainer.innerHTML = "";
+
+  if (cart.length === 0) {
+    cartItemsContainer.innerHTML = `
+      <div class="empty-cart-message" style="text-align: center; margin-top: 120px;">
+        <p>عربة التسوق فارغة</p>
+        <a href="clothes.html" class="empty-cart-link">ابدأ التسوق الان</a>
+      </div>
+    `;
+    updateSummary(cart);
+    return;
+  }
+
+  cart.forEach((product, index) => {
+    const item = document.createElement("div");
+    item.className = "cart-item";
+    item.innerHTML = `
+      <img src="${product.image}" alt="${product.name}" width="100">
+      <div>
+        <h3>${product.name}</h3>
+        <p class="product-price">$${product.price}</p>
+        <button class="remove-btn" onclick="removeItem(${index})"><i class="fas fa-trash-alt"></i> ازالة</button>
+      </div>
+    `;
+    cartItemsContainer.appendChild(item); <!-- ✅ السطر الناقص -->
+  });
+
+  updateSummary(cart);
+}
+
+
+function checkout() {
+
+  localStorage.removeItem("cart");
+  updateCartCount();
+
+  loadCart();
+  const message = document.getElementById("checkout-message");
+  if (message) {
+    message.style.display = "block";
+    setTimeout(() => {
+      message.style.display = "none";
+    }, 4000);
+  }
+}
+
+loadCart();
+
+window.addEventListener('scroll', function () {
+  const box = document.getElementById('summaryBox');
+  const originalOffset = box.offsetTop;
+  if (window.scrollY >= originalOffset) {
+    box.classList.add('fixed');
+  } else {
+    box.classList.remove('fixed');
+  }
+});
+</script>
+<script>
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartCountElem = document.getElementById("cart-count");
+  if (cartCountElem) {
+    cartCountElem.textContent = cart.length;
+  }
+}
+window.onload = updateCartCount;
+</script>
+<script>
+  const toggleButton = document.getElementById("toggleTheme");
+  const body = document.body;
+
+  toggleButton.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const isDark = body.classList.contains("dark-theme");
+    body.classList.toggle("dark-theme");
+    body.classList.toggle("light-theme");
+
+
+    toggleButton.textContent = isDark ? "☀️" : "🌙";
+    toggleButton.classList.add("rotate");
+    setTimeout(() => {
+      toggleButton.classList.remove("rotate");
+    }, 500);
+  });
+</script>
+
+</html>

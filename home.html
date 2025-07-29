@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+         <link rel="stylesheet" href="home.css">
+         <script src="index.js"></script>
+         <title> 🎉TOY STORE</title>
+ 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     </head>
+<body>
+
+
+
+ <div class="nav transparent" id="navbar">
+
+        <div class="logo"> 
+           <img src="images.home/logo (1).png" width="140px">
+ 
+
+    
+    </div>   
+     <button id="toggleTheme" type="button">☀️</button>
+ 
+       <div class="link">
+        <div class="cart-icon" onclick="goToCart()">
+<i class="fa-solid fa-cart-shopping" style="color: transparent; -webkit-text-stroke: 1px white; font-size: 23px;"></i>
+
+<span id="cart-count">0</span>
+</div>
+    </a>
+        <a href="#home">Home</a>
+        <a href="clothes.html">Clothes</a>
+        <a href="about.html#about">About</a>
+        <a href="contact.html">Contact</a>
+
+       </div>
+    </div>
+
+
+<section id="home">
+         <h1 id="typing"></h1>
+</section>
+<section id="clothes">
+      <h1 class="product">
+        منتجاتنا
+      </h1>
+
+<ul class="product1">
+   <li><img src="images.home/product1.png"width="190px">
+    <p class="name">تيشرت Game Over</p >
+  <div class="star-rating">
+  <span class="star" data-value="5">&#9733;</span>
+  <span class="star" data-value="4">&#9733;</span>
+  <span class="star" data-value="3">&#9733;</span>
+  <span class="star" data-value="2">&#9733;</span>
+  <span class="star" data-value="1">&#9733;</span>
+</div>
+<p id="rating-result"></p>
+
+    <p class="contain">تأثيرات Glitch مبتكرة لعشاق التصميم غير التقليدي
+
+
+</p><br>
+   <button  onclick="addToCart('تيشرت Game Over', 'images.home/product1.png', '180.00')" ><i class="fa-solid fa-cart-shopping" style="color: rgb(234, 149, 38); -webkit-text-stroke: 1px black; font-size: 23px;"></i></button>
+
+    <p class="price">$180</p>
+</li>
+
+    <li>
+        <img src="images.home/product2.png"width="190px">
+        <p class="name">تيشرت Glitch Effect</p >
+       <div class="star-rating">
+  <span class="star" data-value="5">&#9733;</span>
+  <span class="star" data-value="4">&#9733;</span>
+  <span class="star" data-value="3">&#9733;</span>
+  <span class="star" data-value="2">&#9733;</span>
+  <span class="star" data-value="1">&#9733;</span>
+</div>
+<p id="rating-result"></p>
+
+        <p class="contain">تأثير Glitch يجعل التيشرت كأنه جزء من لعبة إلكترونية</p><br>
+      <button  onclick="addToCart('تيشرت Glitch Effect', 'images.home/product2.png', '170.00')" ><i class="fa-solid fa-cart-shopping" style="color: rgb(234, 149, 38); -webkit-text-stroke: 1px black; font-size: 23px;"></i></button>
+        <p class="price">$170</p>
+    </li>
+
+    <li>
+        <img src="images.home/prodect3.png"width="190px">
+        <p class="name">تيشرت Pixel Warrior</p >
+       <div class="star-rating">
+  <span class="star" data-value="5">&#9733;</span>
+  <span class="star" data-value="4">&#9733;</span>
+  <span class="star" data-value="3">&#9733;</span>
+  <span class="star" data-value="2">&#9733;</span>
+  <span class="star" data-value="1">&#9733;</span>
+</div>
+<p id="rating-result"></p>
+
+        <p class="contain">تيشرت مستوحى من شخصيات الألعاب البيكسلية مع ألوان زاهية تجذب الأنظار</p class="contain"><br>
+         <button  onclick="addToCart('تيشرت Pixel Warrior', 'images.home/prodect3.png', '110.00')" ><i class="fa-solid fa-cart-shopping" style="color: rgb(234, 149, 38); -webkit-text-stroke: 1px black; font-size: 23px;"></i></button>
+            <p class="price">$110</p>
+        </li>
+    <li>
+        <img src="images.home/product4.png"width="190px">
+        <p class="name">تيشرت Retro Arcade</p>
+       <div class="star-rating">
+  <span class="star" data-value="5">&#9733;</span>
+  <span class="star" data-value="4">&#9733;</span>
+  <span class="star" data-value="3">&#9733;</span>
+  <span class="star" data-value="2">&#9733;</span>
+  <span class="star" data-value="1">&#9733;</span>
+</div>
+<p id="rating-result"></p>
+
+        <p class="contain">تصميم عصري مستوحى من تأثير الـ Glitchالمستخدم في الألعاب الحديثة.</p class="contain"><br>
+            <button  onclick="addToCart('تيشرت Retro Arcade', 'images.home/product4.png', '140.00')" ><i class="fa-solid fa-cart-shopping" style="color: rgb(234, 149, 38); -webkit-text-stroke: 1px black; font-size: 23px;"></i></button>
+        <p class="price">$140</p>
+    </li>
+</ul>
+<ul class="product2">
+  <li>
+    <img src="images.home/prodect5.png" width="190px">
+    <p class="name-1">تيشرت Level Up</p>
+   <div class="star-rating">
+  <span class="star" data-value="5">&#9733;</span>
+  <span class="star" data-value="4">&#9733;</span>
+  <span class="star" data-value="3">&#9733;</span>
+  <span class="star" data-value="2">&#9733;</span>
+  <span class="star" data-value="1">&#9733;</span>
+</div>
+<p id="rating-result"></p>
+
+    <p class="contain">تيشرت مميز بعبارة Level Up ليعبر عن تطورك المستمر في عالم الجيمنج</p>
+    <br>
+   <button  onclick="addToCart('تيشرت Level Up', 'images.home/prodect5.png', '200.00')" ><i class="fa-solid fa-cart-shopping" style="color: rgb(234, 149, 38); -webkit-text-stroke: 1px black; font-size: 23px;"></i>
+</button>
+
+    <p class="price">$200</p>
+  </li>
+
+    <li class="product6">
+        <img src="images.home/product6.png"width="185px">
+        <p class="name-2">تيشرت Controller Vibes</p>
+        <div class="star-rating">
+  <span class="star" data-value="5">&#9733;</span>
+  <span class="star" data-value="4">&#9733;</span>
+  <span class="star" data-value="3">&#9733;</span>
+  <span class="star" data-value="2">&#9733;</span>
+  <span class="star" data-value="1">&#9733;</span>
+</div>
+<p id="rating-result"></p>
+
+        <p class="contain">تصميم يحتوي على أشكال متعدده تحاكي روح التقنية والابتكار</p><br>
+   <button  onclick="addToCart('تيشرت Controller Vibes', 'images.home/product6.png', '120.00')" ><i class="fa-solid fa-cart-shopping" style="color: rgb(228, 156, 63); -webkit-text-stroke: 1px black; font-size: 23px;"></i></button>
+        <p class="price">$120</p></p></li>
+
+    <li class="product5">
+    <img   src="images.home/prodect7.jpg"width="190px">
+    <p class="name">تيشرت Pixel Legends</p>
+  <div class="star-rating">
+  <span class="star" data-value="5">&#9733;</span>
+  <span class="star" data-value="4">&#9733;</span>
+  <span class="star" data-value="3">&#9733;</span>
+  <span class="star" data-value="2">&#9733;</span>
+  <span class="star" data-value="1">&#9733;</span>
+</div>
+<p id="rating-result"></p>
+
+    <p class="contain">تصميم مستوحى من ألعاب البيكسل الكلاسيكية، يدمج بين الألوان الزاهي</p><br>
+     <button  onclick="addToCart('تيشرت Pixel Legends', 'images.home/prodect7.jpg', '190')" ><i class="fa-solid fa-cart-shopping" style="color: rgb(234, 149, 38); -webkit-text-stroke: 1px black; font-size: 23px;"></i></button>
+    <p class="price">$190</p></li>
+    <li>
+        <img src="images.home/product8.png"width="190px">
+        <p class="name">تيشرت Glitch Effect</p >
+         <div class="star-rating">
+  <span class="star" data-value="5">&#9733;</span>
+  <span class="star" data-value="4">&#9733;</span>
+  <span class="star" data-value="3">&#9733;</span>
+  <span class="star" data-value="2">&#9733;</span>
+  <span class="star" data-value="1">&#9733;</span>
+</div>
+<p id="rating-result"></p>
+
+            <p class="contain">لوحة فنية نابضة بالحياة تُشعرك وكأنك داخل صالة ألعاب قديمة، بألوان تضيء الحنين</p><br>
+           <button  onclick="addToCart('تيشرت Glitch Effect', 'images.home/product8.png', '170')" ><i class="fa-solid fa-cart-shopping" style="color: rgb(234, 149, 38); -webkit-text-stroke: 1px black; font-size: 23px;"></i></button>
+            <p class="price">$170</p></li>
+</ul>
+</section>
+<section id="cart">
+
+  <footer class="footer">
+   <a href="#"> home</a>
+    <a href="#"> clothes</a>
+     <a href="#"> about</a>
+      <a href="#"> contact</a>
+            <div class="logo"> 
+             <img src="images.home/logo (1).png" >
+    
+    </div> 
+<hr>
+<br>
+<p>
+  All Rights Reserved .2025© 
+</p>
+</footer>
+<h1>Hello Git!</h1>
+
+</body>
+<script>
+  const text = "🎉 Welcome to Toy Store";
+  let i = 0;
+
+  function type() {
+    if (i < text.length) {
+      document.getElementById("typing").textContent += text.charAt(i);
+      i++;
+      setTimeout(type, 100);
+    } else {
+      setTimeout(() => {
+        document.getElementById("typing").textContent = "";
+        i = 0;
+        type();
+      }, 2000);
+    }
+  }
+
+  type();
+</script>
+ <script>
+function goToCart() {
+  window.location.href = "cart.html"; 
+}
+</script>
+<script>
+let cartCount = 0;
+function addToCart(name, img, price) {
+  cartCount++; 
+
+}
+</script>
+<script>
+function addToCart(name, image, price) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const numericPrice = parseFloat(price); 
+  cart.push({ name, image, price: numericPrice });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+}
+
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartCountElem = document.getElementById("cart-count");
+  if (cartCountElem) {
+    cartCountElem.textContent = cart.length;
+  }
+}
+</script>
+
+ <script>
+   
+  document.querySelectorAll('.star-rating').forEach(ratingGroup => {
+    const stars = ratingGroup.querySelectorAll('.star');
+
+    stars.forEach(clickedStar => {
+      clickedStar.addEventListener('click', () => {
+        const clickedValue = parseInt(clickedStar.getAttribute('data-value'));
+
+        stars.forEach(star => {
+          const starValue = parseInt(star.getAttribute('data-value'));
+          if (starValue <= clickedValue) {
+            star.style.color = 'gold';
+          } else {
+            star.style.color = '#ccc';
+          }
+        });
+      });
+    });
+  });
+</script>
+<script>
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartCountElem = document.getElementById("cart-count");
+  if (cartCountElem) {
+    cartCountElem.textContent = cart.length;
+  }
+}
+window.onload = updateCartCount;
+</script>
+
+<script>
+  window.addEventListener("scroll", function () {
+    const navbar = document.getElementById("navbar");
+    if (window.scrollY > 50) {
+      navbar.classList.remove("transparent");
+      navbar.classList.add("solid");
+    } else {
+      navbar.classList.remove("solid");
+      navbar.classList.add("transparent");
+    }
+  });
+</script>
+
+<script>
+  const toggleButton = document.getElementById("toggleTheme");
+  const body = document.body;
+
+  toggleButton.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const isDark = body.classList.contains("dark-theme");
+
+    // شيل أو ضيف كلاس الوضع الليلي
+    body.classList.toggle("dark-theme");
+    body.classList.toggle("light-theme");
+
+    // غيّر رمز الزر
+    toggleButton.textContent = isDark ? "☀️" : "🌙";
+
+    // تدوير الزر (أنيميشن)
+    toggleButton.classList.add("rotate");
+    setTimeout(() => {
+      toggleButton.classList.remove("rotate");
+    }, 500);
+  });
+</script>
+<script>
+  function toggleSidebar() {
+  var sidebar = document.getElementById("sidebar");
+  sidebar.classList.toggle("active");
+}
+
+  // لو ضغطت برا الشريط، يتقفل
+  window.onclick = function(event) {
+    const sidebar = document.getElementById("sidebar");
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (!sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
+      sidebar.style.width = "0";
+    }
+  };
+</script>
+<script>
+  function toggleSidebar() {
+    var sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("active");
+  }
+</script>
+
+
+
+</html> 

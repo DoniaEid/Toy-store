@@ -1,0 +1,210 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color:rgb(133, 67, 13);
+  display: flex;
+  align-items: center;  /* مهم لتوسيط العناصر عمودياً */
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+  
+ 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logo img {
+  width: 140px;
+  display: flex;
+  margin-top: 5px;
+  margin-left: 60px;
+}
+
+.link {
+  display: flex;
+  margin-left: 600px; /* يدفع اللينكات لليمين */
+  margin-top: 10px;
+ 
+}
+
+.link a {
+  color: white;
+  text-decoration: none;
+  font-size: 23px;
+  margin-left: 50px;
+ 
+}
+
+.link a:hover {
+  color: rgb(226, 211, 193);
+}
+.cart-icon {
+  position: relative;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 20px;
+  display: inline-block;
+}
+
+#cart-count {
+  position: absolute;
+  top: -10px;
+  right: -15px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  padding: 3px 6px;
+  border-radius: 50%;
+}
+.contain{
+        background-color: rgb(249, 247, 247);;
+        min-height: 650px;
+        padding-top: 7px;
+        padding-bottom: 170px;
+}
+.box1{
+    width: 500px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    color: black;
+    border-radius: 12px;
+    background-color: white;
+    margin-top: 190px;
+    margin-left: 300px;
+    margin-right: 100px;
+    direction: rtl;
+    font-size: 19px;
+    line-height: 1.7; 
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.box2{
+    width: 500px;
+    padding-bottom: 30px;
+    padding-right: 20px;
+    padding-left: -30px;
+    padding-top: 10px;
+    color: black;
+    border-radius: 12px;
+    background-color: white;
+    margin-top: 70px;
+    margin-left: 300px;
+    margin-right: 100px;
+    direction: rtl;
+    font-size: 19px;
+    line-height: 1.7; 
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.box{
+     position: absolute;
+     top:210px;  /* من أعلى الصفحة */
+     left: 1000px;
+     width: 270px;
+     border-radius: 10px;
+}
+.bo{
+    position: absolute;
+     top:470px;  /* من أعلى الصفحة */
+     left: 1000px;
+     width: 270px;
+     border-radius: 10px;
+}
+.footer {
+  background-color: #efefee;
+  padding: 40px;
+  clear: both;
+  position: relative;
+  z-index: 1;
+  margin-top: 50px;
+
+}
+.footer a{
+  color: #928f8f;
+  padding-left: 40px;
+  text-decoration: none;
+  font-size: 20px;
+  margin-left: 20px;
+}
+.footer a:hover{
+  color: #5d5c5c;
+}
+.footer .logo{
+   margin-left: 1200px;
+   margin-top: -40px;
+ 
+}
+.footer .logo img{
+  width: 70px;
+}
+.footer hr{
+  margin-top: 20px;
+  margin-left: 40px;
+ 
+}
+.footer p{
+  display: flex;
+  color: #a19f9f;
+  justify-content: center;
+  align-items: center;
+  margin-top:20px;
+  margin-left: 30px;
+}
+#toggleTheme {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.dark-theme {
+  background-color: #151515; 
+  color: #ffffff;
+}
+
+.dark-theme .nav,
+.dark-theme footer
+ {
+  background-color: #222222;
+  color: white;
+  border-color: #444;
+}
+
+.dark-theme .star {
+  color: #999;
+}
+
+.dark-theme .star:hover {
+  color: gold;
+}
+
+.dark-theme .cart-icon i {
+  -webkit-text-stroke: 1px white;
+  color: white !important;
+}
+body.dark-theme .contain{
+    background-color: #151515; /* لون أغمق للوضع الليلي */
+}
+
+
+body.dark-theme .box1,
+body.dark-theme .box2{
+     background-color: #2d2d2d;
+}
+body.dark-theme p{
+  color: white;
+}
+button{
+  padding-left: 40px;
+}

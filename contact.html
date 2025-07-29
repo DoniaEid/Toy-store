@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="contact.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+     <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+   <title> 🎉TOY STORE</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+<div class="nav">
+  <div class="logo"><img src="images.contact/logo (1).png" width="140px"></div>   
+  <button id="toggleTheme" type="button">☀️</button>
+  <div class="link">
+    <div class="cart-icon" onclick="goToCart()">
+      <i class="fa-solid fa-cart-shopping" style="color: transparent; -webkit-text-stroke: 1px white; font-size: 23px;"></i>
+   
+<span id="cart-count">0</span>
+    </div>
+    <a href="home.html">Home</a>
+    <a href="clothes.html">Clothes</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</div>
+<div class="image">
+     <div class="image1">
+         <img src="images.contact/contact1.png" width="170px">
+         <p class="address">
+        <p class="p1"><b>العنوان</b> </p>
+        <p class="p2">ف 1 / مصر الجديده روكسى</p>
+        <p class="p3">ف 2 / الزقازيق القوميه شارع الفلل</p>
+         </p>
+     </div>
+     <div class="image2">
+     <div class="image2">
+         <img src="images.contact/contact2.png" width="180px">
+         <p class="address">
+        <p class="p1"><b>رقم التيليفون</b> </p>
+        <p class="p2">+20123456789</p>
+        <p class="p3">+20987654321</p>
+         </p>
+     </div>
+        <div class="image3">
+     <div class="image3">
+         <img src="images.contact/contact3.png" width="180px">
+         <p class="address">
+        <p class="p1"><b>البريد الالكترونى</b> </p>
+        <p class="p2">nfo@example.com</p>
+        <p class="p3">support@example.com</p>
+         </p>
+     </div>
+</div>
+
+<form onsubmit="showMessage(event)">
+  <div class="contact">
+    <div class="small">
+      <b class="a">تواصل معنا</b>
+
+      <div class="n">
+        <label for="name">الاسم</label>
+        <input id="name" type="text" placeholder="اكتب اسمك" required>
+      </div>
+
+      <div class="email">
+        <label for="email">البريد الالكترونى</label>
+        <input id="email" type="email" placeholder="example@mail.com" required>
+      </div>
+
+      <div class="message">
+        <label for="msg">الرسالة</label>
+        <textarea id="msg" placeholder="اكتب رسالتك هنا..." required></textarea>
+      </div>
+
+      <div class="submit">
+        <input type="submit" value="إرسال">
+      </div>
+
+      <p id="success-msg" style="display:none; color: green; font-family: 'Cairo', sans-serif; margin-top: 15px;">
+        تم إرسال رسالتك بنجاح ✔️
+      </p>
+    </div>
+  </div>
+</form>
+
+  <footer class="footer">
+   <a href="#"> home</a>
+    <a href="#"> clothes</a>
+     <a href="#"> about</a>
+      <a href="#"> contact</a>
+            <div class="logo"> 
+             <img src="logo (1).png " >
+    
+    </div> 
+<hr>
+<br>
+<p>
+  All Rights Reserved .2025© 
+</p>
+</footer>
+
+
+</body>
+<script>
+function goToCart() {
+  window.location.href = "cart.html";
+}
+
+function addToCart(name, image, price) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const numericPrice = parseFloat(price);
+  cart.push({ name, image, price: numericPrice });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+}
+
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartCountElem = document.getElementById("cart-count");
+  if (cartCountElem) {
+    cartCountElem.textContent = cart.length;
+  }
+}
+updateCartCount();
+</script>
+<script>
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartCountElem = document.getElementById("cart-count");
+  if (cartCountElem) {
+    cartCountElem.textContent = cart.length;
+  }
+}
+
+window.onload = updateCartCount;
+</script>
+<script>
+function showMessage(event) {
+    event.preventDefault(); 
+    alert("تم إرسال رسالتك بنجاح!");
+    document.getElementById("name").value = "";
+document.getElementById("email").value = "";
+document.getElementById("msg").value = "";
+}
+</script>
+
+<script>
+  const toggleButton = document.getElementById("toggleTheme");
+  const body = document.body;
+
+  toggleButton.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const isDark = body.classList.contains("dark-theme");
+
+    // شيل أو ضيف كلاس الوضع الليلي
+    body.classList.toggle("dark-theme");
+    body.classList.toggle("light-theme");
+
+    // غيّر رمز الزر
+    toggleButton.textContent = isDark ? "☀️" : "🌙";
+
+    // تدوير الزر (أنيميشن)
+    toggleButton.classList.add("rotate");
+    setTimeout(() => {
+      toggleButton.classList.remove("rotate");
+    }, 500);
+  });
+</script>
+</html>

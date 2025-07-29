@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="about.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title> 🎉TOY STORE</title>
+</head>   
+<body>
+
+<div class="nav">
+  <div class="logo"><img src="images.about/logo (1).png" width="140px"></div>   
+  <button id="toggleTheme" type="button">☀️</button>
+  <div class="link">
+    <div class="cart-icon" onclick="goToCart()">
+      <i class="fa-solid fa-cart-shopping" style="color: transparent; -webkit-text-stroke: 1px white; font-size: 23px;"></i>
+   
+<span id="cart-count">0</span>
+    </div>
+    <a href="home.html">Home</a>
+    <a href="clothes.html">Clothes</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</div>
+<div class="contain">
+   <div class="box1">
+    <p>
+         مرحبًا بك في T🎮Y Store – وجهتك الأولى لعالم المرح والأناقة للأطفال!
+         <br>
+         نحن متجر متخصص في بيع ألعاب الأطفال التي تجمع بين الترفيه والإبداع،
+         <br>
+بالإضافة إلى تيشرتات الأطفال المستوحاة من عالم الألعاب والخيال، بتصاميم
+<br>
+فريدة تناسب جميع الأعمار.
+</p>
+   </div>
+
+<img class="box"src="images.about/bac3.png" >
+<div class="box2">
+  <p>
+      🌟 رؤيتنا في T🎮Y، نسعى إلى جعل كل لحظة في حياة الطفل مليئة
+    <br>
+    بالسعادة والإبداع من خلال ألعاب مبتكرة وملابس أنيقة تلبي احتياجاتهم
+    <br>
+    وتعبّر عن شخصياتهم الفريدة. 📦 خدمة التوصيل السريع نوفر لك توصيلًا
+    <br>
+    سريعًا وآمنًا إلى باب منزلك، مع خدمة عملاء متاحة دائمًا لضمان تجربة تسوق
+    <br>
+    ممتعة وسهلة. 💙 انضم إلينا اليوم! كن جزءًا من عالم T🎮Y، حيث نُحَوِّل
+   <br>
+   اللعب والموضة إلى تجربة لا تُنسى للأطفال! 🎁👕
+   </p>
+</div>
+<img class="bo"src="images.about/bac4.png" >
+</div>
+</body><footer class="footer">
+  <a href="#">home</a>
+  <a href="#">clothes</a>
+  <a href="#">about</a>
+  <a href="#">contact</a>
+  <div class="logo"><img src="images.about/logo (1).png" width="100px"></div> 
+  <hr><br>
+  <p>All Rights Reserved .2025©</p>
+</footer>
+<script>
+function goToCart() {
+  window.location.href = "cart.html";
+}
+
+function addToCart(name, image, price) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const numericPrice = parseFloat(price);
+  cart.push({ name, image, price: numericPrice });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+}
+
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartCountElem = document.getElementById("cart-count");
+  if (cartCountElem) {
+    cartCountElem.textContent = cart.length;
+  }
+}
+updateCartCount();
+</script>
+
+ <script>
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartCountElem = document.getElementById("cart-count");
+  if (cartCountElem) {
+    cartCountElem.textContent = cart.length;
+  }
+}
+window.onload = updateCartCount;
+</script>
+
+<script>
+  const toggleButton = document.getElementById("toggleTheme");
+  const body = document.body;
+
+  toggleButton.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const isDark = body.classList.contains("dark-theme");
+
+    // شيل أو ضيف كلاس الوضع الليلي
+    body.classList.toggle("dark-theme");
+    body.classList.toggle("light-theme");
+
+    // غيّر رمز الزر
+    toggleButton.textContent = isDark ? "☀️" : "🌙";
+
+    // تدوير الزر (أنيميشن)
+    toggleButton.classList.add("rotate");
+    setTimeout(() => {
+      toggleButton.classList.remove("rotate");
+    }, 500);
+  });
+</script>
+
+</html>
