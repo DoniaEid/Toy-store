@@ -282,39 +282,41 @@
   background-color: rgb(199, 134, 81);
   color: white;
 }
-.footer {
+.footer_contact {
   background-color: #efefee;
   padding: 40px;
-  clear: both;
   position: relative;
   z-index: 1;
   margin-bottom: -220px;
   margin-left: -400PX;
 }
-.footer a{
-  color: #928f8f;
-  padding-left: 90px;
+.footer_contact .link a{
+   color: #928f8f;
   text-decoration: none;
-  font-size: 20px;
-  margin-right: -20px;
+  font-size: 21px;
+  margin-inline-start: 60px;
+
 }
-.footer a:hover{
+.footer_contact  .link {
+  margin-left: 100px;
+}
+.footer_contact  .link a:hover{
   color: #5d5c5c;
 }
-.footer .logo{
+.footer_contact .logo{
    margin-left: 1300px;
    margin-top: -40px;
  
 }
-.footer .logo img{
+.footer_contact .logo img{
   width: 70px;
 }
-.footer hr{
+.footer_contact hr{
   margin-top: 20px;
-  margin-left: 72px;
+  margin-left: 150px;
  
 }
-.footer p{
+.footer_contact  p{
   display: flex;
   color: #a19f9f;
   justify-content: center;
